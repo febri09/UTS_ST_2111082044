@@ -173,7 +173,7 @@ public class ChatClient extends javax.swing.JFrame {
                 String message;
                 while ((message = in.readLine()) != null) {
                     String decryptedMessage = decrypt(message);
-                    messageArea.append("Received: " + decryptedMessage + "\n");
+                    messageArea.append("SERVER: " + decryptedMessage + "\n");
                 }
             } catch (ConnectException e) {
                 messageArea.append("Connection timed out. Check the server or network settings.\n");
@@ -188,7 +188,7 @@ public class ChatClient extends javax.swing.JFrame {
         String message = messageTextField.getText();
         if (out != null) {
             String encryptedMessage = encrypt(message);
-            messageArea.append("You: " + message + "\n");  // Menambahkan pesan ke area chat
+            messageArea.append("ME: " + message + "\n");  // Menambahkan pesan ke area chat
             out.println(encryptedMessage);
             out.flush();
             messageTextField.setText("");  // Mengosongkan kotak pesan setelah mengirim

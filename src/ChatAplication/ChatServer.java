@@ -173,7 +173,7 @@ public class ChatServer extends javax.swing.JFrame {
                     writer.flush();
                 }
             }
-            messageArea.append("You : " + message + "\n");
+            messageArea.append("ME : " + message + "\n");
             messageInput.setText("");
         }
     }//GEN-LAST:event_sendButtonActionPerformed
@@ -235,7 +235,7 @@ public class ChatServer extends javax.swing.JFrame {
                 String message;
                 while ((message = in.readLine()) != null) {
                     String decryptedMessage = decrypt(message);
-                    messageArea.append("Received: " + decryptedMessage + "\n");
+                    messageArea.append("CLIENT: " + decryptedMessage + "\n");
    
                 }
             } catch (IOException ex) {
